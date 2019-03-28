@@ -7,19 +7,19 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
+         $(document).ready(function(){
             $("#btn-translate-into-english").click(function(){
-                $("legend").html("Complete the form:")
-                $("#name").html("Name")
-                $("#birth-date").html("Birth date")
-                $("#info").html("Fill the form")
-                $("h1").html("Header")
-                $("input").html("Send")
-                $("#footer").html("Footer")
-                $("#btn-change-format").html("Change format")
-                $("#btn-default-values").html("Input values")
-                $("#btn-translate-into-english").html("Translate to English")
-                $("#email").html("Email")
+                $("legend").text("Complete the form:")
+                $("#name").text("Name")
+                $("#birth-date").text("Birth date")
+                $("#info").text("Fill the form")
+                $("h1").text("Header")
+                $("input").text("Send")
+                $("#footer").text("Footer")
+                $("#btn-change-format").text("Change format")
+                $("#btn-default-values").text("Input values")
+                $("#btn-translate-into-english").text("Translate to English")
+                $("#email").text("Email")
                 $("#send ").val("Send")
             });
             $("#btn-change-format").click(function(){
@@ -35,6 +35,9 @@
                 $("#btn-translate-into-english").html("<b>Traducir a inglés</b>")
                 $("#email").html("<b>Email</b>")
                 $("#send").html("")
+            });
+            $("#btn-default-values").click(function(){
+
             });
         });
     </script>
