@@ -7,6 +7,18 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        $(document).ready(function(){
+            $("#btn-attr-input-name").click(function(){
+                alert($("#inp-name").attr("type"))
+            });
+            $("#btn-attr-input-date").click(function(){
+                alert($("#inp-date").attr("id"))
+            });
+            $("#btn-attr-input-submit").click(function(){
+                alert($("#send").attr("value"))
+            });
+
+        });
     </script>
     <style>
         .page {
@@ -84,7 +96,7 @@
                             <input id="inp-email" type="text">
                             <p id="birth-date">Fecha de nacimiento</p>
                             <input id="inp-date" type="date"><br /><br />
-                            <input type="submit" value="Enviar"
+                            <input id="send" type="submit" value="Enviar"
                                 title="Como no tenemos un lugar al que enviar el contenido del formulario, cuando pulses en el botón, se limpiará el formulario.">
                         </div>
                         <div id="info">
