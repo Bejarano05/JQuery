@@ -12,7 +12,7 @@
                 $("#mytable").append("<tr><td>X</td><td>X</td><td>X</td><td>X</td></tr>")
             });
             $("#btn-del-row").click(function(){                
-                $("tr").remove()
+                $("tr").last().remove()
             });
         });
     </script>
