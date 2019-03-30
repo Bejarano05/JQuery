@@ -9,6 +9,10 @@
 
     <script>
         $(document).ready(function () {
+            
+            $(".clear-button").click(function(){
+                $(".result").empty()
+            });
             $(".click").click(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Clicked!<br/>");
             });
@@ -16,6 +20,23 @@
             $(".dblclick").dblclick(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Double clicked!<br/>");
             });
+            $(".mouseenter").mouseenter(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Mouse enter!<br/>");
+            });
+            $(".mouseleave").mouseleave(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Mouse leave!<br/>");
+            });
+            $(".blur").blur(function(){
+                $(this).css("background-color","red")
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - The focus was taken out!<br/>");
+            });
+            $(".focus").focus(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You came the focus!<br/>");
+            });
+            $(".change").change(function(){
+                
+            });
+
 
         });
     </script>
