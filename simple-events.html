@@ -34,10 +34,14 @@
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You came the focus!<br/>");
             });
             $(".change").change(function(){
-                
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You change the text to " , $(".change").val(),"!<br/>");
             });
-
-
+            $(".submit").click(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - Submitted!<br/>");
+            });
+            $("body").scroll(function(){
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You scrolled the web!<br/>");
+            });
         });
     </script>
 
@@ -93,8 +97,8 @@
                 <td title="Press any key on the input below">keypress</td>
                 <td title="Click on this input which is a submit type input. The page is refreshed after clicking">
                     <p>submit</p>
-                    <form class="submit">
-                        <input type="submit" value="Click to submit">
+                    <form ; return false>
+                        <input class="submit" type="submit" value="Click to submit">
                     </form>
                 </td>
                 <td class="load" title="A piece of this web is loaded on the blue paragraph when you click here">load
