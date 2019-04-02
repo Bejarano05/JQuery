@@ -11,6 +11,10 @@
                 $("button").click(function() {
                     $(this).siblings().slideToggle();
                 });
+                $("#allarticle").click(function(){
+                    $(".article").slideToggle();
+                });
+
         });
     </script>
     <style>
@@ -77,8 +81,12 @@
     <div class="page">
         <h1>Cabecera</h1>
 
+    
         <div id="articles">
             <p>Artículos</p>
+            <div >
+                <button id="allarticle">Open/Close all</button>
+            </div>
             <div>
                 <button>Open/Close</button>
                 <div class="article">Artículo 1</div>
@@ -107,8 +115,9 @@
                 <button>Open/Close</button>
                 <div class="article">Artículo 7</div>
             </div>
+        
         </div>
-
+    
         <div id="footer">Pie de página</div>
     </div>
 </body>

@@ -39,9 +39,22 @@
             $(".submit").click(function(){
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Submitted!<br/>");
             });
-            $("body").scroll(function(){
+            $(".page").scroll(function(){
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You scrolled the web!<br/>");
             });
+
+            $(".key").keypress(function() {
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You pressed a key!!<br/>");
+            });
+
+            $(".key").keydown(function() {
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You downed a key!!<br/>");
+            });
+
+            $(".key").keyup(function() {
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You upped a key!!<br/>");
+            });
+
         });
     </script>
 
