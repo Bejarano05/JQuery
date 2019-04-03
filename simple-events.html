@@ -9,8 +9,8 @@
 
     <script>
         $(document).ready(function () {
-            
-            $(".clear-button").click(function(){
+
+            $(".clear-button").click(function () {
                 $(".result").empty()
             });
             $(".click").click(function () {
@@ -20,41 +20,51 @@
             $(".dblclick").dblclick(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Double clicked!<br/>");
             });
-            $(".mouseenter").mouseenter(function(){
+            $(".mouseenter").mouseenter(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Mouse enter!<br/>");
             });
-            $(".mouseleave").mouseleave(function(){
+            $(".mouseleave").mouseleave(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Mouse leave!<br/>");
             });
-            $(".blur").blur(function(){
-                $(this).css("background-color","red")
+            $(".blur").blur(function () {
+                $(this).css("background-color", "red")
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - The focus was taken out!<br/>");
             });
-            $(".focus").focus(function(){
+            $(".focus").focus(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You came the focus!<br/>");
             });
-            $(".change").change(function(){
-                $(".result").prepend(new Date().toString().slice(15, 24) + " - You change the text to " , $(".change").val(),"!<br/>");
+            $(".change").change(function () {
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You change the text to ", $(".change").val(), "!<br/>");
             });
-            $(".submit").click(function(){
+            $(".submit").click(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - Submitted!<br/>");
             });
-            $(".page").scroll(function(){
-                $(".result").prepend(new Date().toString().slice(15, 24) + " - You scrolled the web!<br/>");
+            $(document).scroll(function () {
+                $("#scroll").mouseover(function () {
+                    $(".result").prepend(new Date().toString().slice(15, 24) + " - You scrolled the web!<br/>");
+                });
             });
 
-            $(".key").keypress(function() {
+            $(".key").keypress(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You pressed a key!!<br/>");
             });
 
-            $(".key").keydown(function() {
+            $(".key").keydown(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You downed a key!!<br/>");
             });
 
-            $(".key").keyup(function() {
+            $(".key").keyup(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You upped a key!!<br/>");
             });
-
+            $(document).on('submit', '#my-form', function () {
+                return false;
+                $(".result").prepend(new Date().toString().slice(15, 24) + " - You submited!!<br/>");
+            });
+            $(window).resize(function () {
+                $("#resize").mouseover(function () {
+                    $(".result").prepend(new Date().toString().slice(15, 24) + " - You resize the web!<br/>");
+                });
+            });
         });
     </script>
 
@@ -66,6 +76,7 @@
         }
 
         table,
+
         td {
             border-collapse: collapse;
             border: 1px solid black;
@@ -110,7 +121,7 @@
                 <td title="Press any key on the input below">keypress</td>
                 <td title="Click on this input which is a submit type input. The page is refreshed after clicking">
                     <p>submit</p>
-                    <form ; return false>
+                    <form id="my-form">
                         <input class="submit" type="submit" value="Click to submit">
                     </form>
                 </td>
@@ -126,7 +137,7 @@
                         <input class="change" type="text" value="Change me">
                     </form>
                 </td>
-                <td title="Look what happens when you resize this window">resize</td>
+                <td id="resize" title="Look what happens when you resize this window">resize</td>
             </tr>
             <tr>
                 <td class="mouseenter" title="Look what happens when the mouse enters here">mouseenter</td>
@@ -137,7 +148,7 @@
                         <input class="focus" type="text" value="Bring the focus to me">
                     </form>
                 </td>
-                <td title="Look what happens when you scroll this page">scroll</td>
+                <td id="scroll" title="Look what happens when you scroll this page">scroll</td>
             </tr>
             <tr>
                 <td class="mouseleave" title="Look what happens when the mouse leaves this cell">mouseleave</td>
