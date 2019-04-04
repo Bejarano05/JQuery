@@ -9,6 +9,10 @@
 
     <script>
         $(document).ready(function () {
+            $(".result").prepend(new Date().toString().slice(15, 24) + " - Loaded!<br/>");
+            /* $("body").load(function () {
+                console.log("body load");
+            }); */
 
             $(".clear-button").click(function () {
                 $(".result").empty()
@@ -36,13 +40,11 @@
             $(".change").change(function () {
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You change the text to ", $(".change").val(), "!<br/>");
             });
-            $(".submit").click(function () {
-                $(".result").prepend(new Date().toString().slice(15, 24) + " - Submitted!<br/>");
-            });
+            
             $(document).scroll(function () {
-                $("#scroll").mouseover(function () {
+                //$("#scroll").mouseover(function () {
                     $(".result").prepend(new Date().toString().slice(15, 24) + " - You scrolled the web!<br/>");
-                });
+                //});
             });
 
             $(".key").keypress(function () {
@@ -57,13 +59,14 @@
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You upped a key!!<br/>");
             });
             $(document).on('submit', '#my-form', function () {
-                return false;
+                
                 $(".result").prepend(new Date().toString().slice(15, 24) + " - You submited!!<br/>");
+                return false;
             });
             $(window).resize(function () {
-                $("#resize").mouseover(function () {
+                //$("#resize").mouseover(function () {
                     $(".result").prepend(new Date().toString().slice(15, 24) + " - You resize the web!<br/>");
-                });
+                //});
             });
         });
     </script>
